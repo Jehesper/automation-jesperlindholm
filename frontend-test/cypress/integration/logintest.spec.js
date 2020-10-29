@@ -15,6 +15,10 @@ it('Valid Login', function(){
     loginFunction.logIn(cy, user1, password1, 'Tester Hotel Overview')
 })
 
+it('Log out', function(){
+    loginFunction.logOut(cy)
+})
+
 
 
 })

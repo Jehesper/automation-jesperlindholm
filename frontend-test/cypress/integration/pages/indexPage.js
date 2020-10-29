@@ -23,7 +23,11 @@ function logIn(cy, username, password, pageValidate){
 function checkTitleIndexPage(cy){
     cy.title().should('eq', indexPageTitle)}
 
+    function logOut(cy){
+    cy.get('.user > .btn').click()}
+
 module.exports = {
     checkTitleIndexPage,
-    logIn
+    logIn,
+    logOut
 }

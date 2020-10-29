@@ -3,6 +3,8 @@
 import * as loginFunction from './pages/indexPage'
 import * as overViewPage from '../integration/pages/hotelOverviewPage'
 import * as targets from '../integration/targets/target'
+import {  password1, user1 } from '../integration/targets/target'
+
 
 
 describe('Overview Button Check', function(){
@@ -11,6 +13,10 @@ describe('Overview Button Check', function(){
        loginFunction.checkTitleIndexPage(cy, 'Testers Hotel')
        
     })
+
+    it('Valid Login', function(){
+      loginFunction.logIn(cy, user1, password1, 'Tester Hotel Overview')
+  })
    
     it('Find Overview Rooms', function(){
      
