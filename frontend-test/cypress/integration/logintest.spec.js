@@ -9,13 +9,16 @@ describe('Index Page Test', function(){
 beforeEach ( ()=>{
     cy.visit(targets.base_url)
    loginFunction.checkTitleIndexPage(cy, 'Testers Hotel')
+   
 })
 
 it('Valid Login', function(){
     loginFunction.logIn(cy, user1, password1, 'Tester Hotel Overview')
+    loginFunction.logOut(cy)
 })
 
 it('Log out', function(){
+    loginFunction.logIn(cy, user1, password1, 'Tester Hotel Overview')
     loginFunction.logOut(cy)
 })
 
