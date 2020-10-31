@@ -5,7 +5,7 @@ import {  password1, user1 } from '../integration/targets/target'
 import * as createRoomFunction from '../integration/pages/roomsPage'
 import * as targets from '../integration/targets/target'
 
-describe('Create Room Test', function(){
+describe('Room Test', function(){
     beforeEach ( ()=>{
         cy.visit(targets.base_url)
         loginFunction.checkTitleIndexPage(cy, 'Testers Hotel')

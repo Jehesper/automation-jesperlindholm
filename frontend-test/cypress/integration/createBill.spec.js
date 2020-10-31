@@ -2,22 +2,25 @@
 
 import * as loginFunction from '../integration/pages/indexPage'
 import {  password1, user1 } from '../integration/targets/target'
-import clientPage from '../integration/pages/clientPage'
 import * as targets from '../integration/targets/target'
+import billPage from '../integration/pages/billPage'
 
-describe('Client Test', function(){
+describe('Bill Test', function(){
     beforeEach ( ()=>{
         cy.visit(targets.base_url)
         loginFunction.checkTitleIndexPage(cy, 'Testers Hotel')
         loginFunction.logIn(cy, user1, password1, 'Tester Hotel Overview')
-        cy.contains('Clients')
+        cy.contains('Bills')
     })
 
-    it('Create a new client', function(){
+        it('Create a Bill', function(){
 
-      clientPage.createClient(cy, 'Jesper','test@hotmail.com', '07707654808')
-      loginFunction.logOut(cy)
+            billPage.createBill(cy)
+            loginFunction.logOut(cy)
+         
+          })
+
+        
+      
+      
     })
-    })
-
-

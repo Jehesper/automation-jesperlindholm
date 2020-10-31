@@ -2,11 +2,20 @@
 const goBackButton = ':nth-child(3) > .btn'
 
 //check each room-button in Overveiw 1 by one with page validation
-function checkOverviewButtons (cy, pageValidate, room1, room2, room3, room4){
+function checkOverviewButtons (cy, pageValidate){
+
+  
+  var Rooms = ':nth-child(1) > .btn'
+  var Clients = '.blocks > :nth-child(2) > .btn'
+  var Bills = ':nth-child(3) > .btn'
+  var Reservations = ':nth-child(4) > .btn'
+  
+
+     
 
 //Rooms to check
       var roomsPath = [
-        room1, room2, room3, room4
+        Rooms, Clients, Bills, Reservations
       ];
 //Validation of page
       var roomsName = [
@@ -15,7 +24,7 @@ function checkOverviewButtons (cy, pageValidate, room1, room2, room3, room4){
 
       var y = 0;
       var i;
-
+//iterate through rooms
       for (i = 0; i < roomsPath.length; i++) {
         cy.get(roomsPath[i]).click(),
         cy.contains(roomsName[y]),

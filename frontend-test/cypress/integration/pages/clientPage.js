@@ -1,14 +1,26 @@
 /// <reference types="cypress" />
 
+var clientPage = '.blocks > :nth-child(2) > .btn'
+var nameFeild = ':nth-child(1) > input'
+var mailFeild = ':nth-child(2) > input'
+var phoneFeild = ':nth-child(3) > input'
+var url = 'http://localhost:3000/client/new'
+
+//Creates a client with values passed in parameters
 function createClient(cy, name, mail, phone){
-    cy.get('.blocks > :nth-child(2) > .btn').click()
+    cy.get(clientPage).click()
     cy.contains('Clients')
     cy.get('h2 > .btn').click()
     cy.contains('New Client')
-    cy.get(':nth-child(1) > input').type(name)
-    cy.get(':nth-child(2) > input').type(mail)
-    cy.get(':nth-child(3) > input').type(phone)
+    cy.url().should('eq', url)
+    cy.get(nameFeild).type(name)
+    cy.get(mailFeild).type(mail)
+    cy.get(phoneFeild).type(phone)
     cy.get('.blue').click()
+
+    cy.contains(name)
+    cy.contains(mail)
+    cy.contains(phone)
 
 }
 module.exports = {createClient}

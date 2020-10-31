@@ -5,7 +5,7 @@ import * as targets from '../integration/targets/target'
 import {  password1, user1 } from '../integration/targets/target'
 
 
-describe('Index Page', function(){
+describe('Index Page Test', function(){
 beforeEach ( ()=>{
     cy.visit(targets.base_url)
    loginFunction.checkTitleIndexPage(cy, 'Testers Hotel')
